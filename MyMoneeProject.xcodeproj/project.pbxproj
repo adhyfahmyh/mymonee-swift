@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA2D28E42650CC66009B02B2 /* ConfirmationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D28E32650CC66009B02B2 /* ConfirmationStatus.swift */; };
+		FA3B23ED26561D8A00D4D868 /* MoneyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B23EC26561D8A00D4D868 /* MoneyService.swift */; };
+		FA3B23F12656476B00D4D868 /* TransactionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B23F02656476B00D4D868 /* TransactionResponse.swift */; };
+		FA3B23F4265650A700D4D868 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B23F3265650A700D4D868 /* UserResponse.swift */; };
+		FA3B23FA2656565D00D4D868 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B23F92656565D00D4D868 /* UserService.swift */; };
+		FA3B23FE2656AD4300D4D868 /* WalletResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B23FD2656AD4300D4D868 /* WalletResponse.swift */; };
+		FA3B24022656ADF800D4D868 /* WalletService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B24012656ADF800D4D868 /* WalletService.swift */; };
+		FA547634264FAB6600B5E40B /* CategorySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA547633264FAB6600B5E40B /* CategorySelection.swift */; };
+		FA547637264FBAA500B5E40B /* ButtonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA547636264FBAA500B5E40B /* ButtonConfig.swift */; };
+		FA54763B264FBE2500B5E40B /* UsageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA547639264FBE2500B5E40B /* UsageDetailViewController.swift */; };
+		FA54763C264FBE2500B5E40B /* UsageDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA54763A264FBE2500B5E40B /* UsageDetailViewController.xib */; };
+		FA547641264FC1C200B5E40B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA547640264FC1C200B5E40B /* Colors.swift */; };
+		FA672AB8264FF59A004F42E6 /* SelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA672AB6264FF59A004F42E6 /* SelectCollectionViewCell.swift */; };
+		FA672AB9264FF59A004F42E6 /* SelectCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA672AB7264FF59A004F42E6 /* SelectCollectionViewCell.xib */; };
+		FA672ABC264FFEC1004F42E6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA672ABB264FFEC1004F42E6 /* User.swift */; };
+		FA672ABF265012A6004F42E6 /* DateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA672ABE265012A6004F42E6 /* DateTime.swift */; };
+		FA7656A5264FA3BE00CD6C85 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7656A3264FA3BE00CD6C85 /* CategoryCollectionViewCell.swift */; };
+		FA7656A6264FA3BE00CD6C85 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7656A4264FA3BE00CD6C85 /* CategoryCollectionViewCell.xib */; };
 		FAF609A9264CE1DA004912DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF609A8264CE1DA004912DC /* AppDelegate.swift */; };
 		FAF609AB264CE1DA004912DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF609AA264CE1DA004912DC /* SceneDelegate.swift */; };
 		FAF609B2264CE1DB004912DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF609B1264CE1DB004912DC /* Assets.xcassets */; };
@@ -56,9 +74,29 @@
 		FAF60A2A264E482D004912DC /* EditDreamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF60A28264E482D004912DC /* EditDreamViewController.xib */; };
 		FAF60A2E264EB223004912DC /* ConvertVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF60A2D264EB223004912DC /* ConvertVariable.swift */; };
 		FAF60A31264EB972004912DC /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF60A30264EB972004912DC /* Wallet.swift */; };
+		FAF60A34264F8750004912DC /* NotFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF60A33264F8750004912DC /* NotFoundView.swift */; };
+		FAF60A37264F8780004912DC /* NotFoundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF60A36264F8780004912DC /* NotFoundView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA2D28E32650CC66009B02B2 /* ConfirmationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationStatus.swift; sourceTree = "<group>"; };
+		FA3B23EC26561D8A00D4D868 /* MoneyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyService.swift; sourceTree = "<group>"; };
+		FA3B23F02656476B00D4D868 /* TransactionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResponse.swift; sourceTree = "<group>"; };
+		FA3B23F3265650A700D4D868 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		FA3B23F92656565D00D4D868 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		FA3B23FD2656AD4300D4D868 /* WalletResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletResponse.swift; sourceTree = "<group>"; };
+		FA3B24012656ADF800D4D868 /* WalletService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletService.swift; sourceTree = "<group>"; };
+		FA547633264FAB6600B5E40B /* CategorySelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelection.swift; sourceTree = "<group>"; };
+		FA547636264FBAA500B5E40B /* ButtonConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonConfig.swift; sourceTree = "<group>"; };
+		FA547639264FBE2500B5E40B /* UsageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageDetailViewController.swift; sourceTree = "<group>"; };
+		FA54763A264FBE2500B5E40B /* UsageDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsageDetailViewController.xib; sourceTree = "<group>"; };
+		FA547640264FC1C200B5E40B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		FA672AB6264FF59A004F42E6 /* SelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA672AB7264FF59A004F42E6 /* SelectCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectCollectionViewCell.xib; sourceTree = "<group>"; };
+		FA672ABB264FFEC1004F42E6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FA672ABE265012A6004F42E6 /* DateTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTime.swift; sourceTree = "<group>"; };
+		FA7656A3264FA3BE00CD6C85 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA7656A4264FA3BE00CD6C85 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		FAF609A5264CE1DA004912DC /* MyMoneeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMoneeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF609A8264CE1DA004912DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF609AA264CE1DA004912DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +148,8 @@
 		FAF60A28264E482D004912DC /* EditDreamViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditDreamViewController.xib; sourceTree = "<group>"; };
 		FAF60A2D264EB223004912DC /* ConvertVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertVariable.swift; sourceTree = "<group>"; };
 		FAF60A30264EB972004912DC /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		FAF60A33264F8750004912DC /* NotFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFoundView.swift; sourceTree = "<group>"; };
+		FAF60A36264F8780004912DC /* NotFoundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotFoundView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,11 +163,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA3B23EB26561D6F00D4D868 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FA3B23EC26561D8A00D4D868 /* MoneyService.swift */,
+				FA3B23F92656565D00D4D868 /* UserService.swift */,
+				FA3B24012656ADF800D4D868 /* WalletService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FA3B23FC2656AD1600D4D868 /* ModelAPI */ = {
+			isa = PBXGroup;
+			children = (
+				FA3B23F3265650A700D4D868 /* UserResponse.swift */,
+				FA3B23F02656476B00D4D868 /* TransactionResponse.swift */,
+				FA3B23FD2656AD4300D4D868 /* WalletResponse.swift */,
+			);
+			path = ModelAPI;
+			sourceTree = "<group>";
+		};
+		FA54763F264FC1B300B5E40B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FAF609CE264CE765004912DC /* Poppins */,
+				FA547640264FC1C200B5E40B /* Colors.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		FAF6099C264CE1DA004912DC = {
 			isa = PBXGroup;
 			children = (
 				FAF609A7264CE1DA004912DC /* MyMoneeProject */,
-				FAF609CE264CE765004912DC /* Poppins */,
 				FAF609A6264CE1DA004912DC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -143,6 +211,8 @@
 		FAF609A7264CE1DA004912DC /* MyMoneeProject */ = {
 			isa = PBXGroup;
 			children = (
+				FA3B23EB26561D6F00D4D868 /* Network */,
+				FA54763F264FC1B300B5E40B /* Assets */,
 				FAF60A2C264EB13C004912DC /* Method */,
 				FAF60A05264D0F8C004912DC /* Model */,
 				FAF609FE264CF7A0004912DC /* MainTab */,
@@ -160,6 +230,7 @@
 		FAF609BD264CE5DE004912DC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FAF60A39264F9380004912DC /* Reusable */,
 				FAF60A06264D0FBA004912DC /* SubView */,
 				FAF609BE264CE63A004912DC /* HomeViewController.swift */,
 				FAF609BF264CE63A004912DC /* HomeViewController.xib */,
@@ -204,6 +275,10 @@
 				FAF609F8264CF075004912DC /* HomeTableViewCell.xib */,
 				FAF60A14264D655A004912DC /* DreamTableViewCell.swift */,
 				FAF60A15264D655A004912DC /* DreamTableViewCell.xib */,
+				FA7656A3264FA3BE00CD6C85 /* CategoryCollectionViewCell.swift */,
+				FA7656A4264FA3BE00CD6C85 /* CategoryCollectionViewCell.xib */,
+				FA672AB6264FF59A004F42E6 /* SelectCollectionViewCell.swift */,
+				FA672AB7264FF59A004F42E6 /* SelectCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -220,9 +295,13 @@
 		FAF60A05264D0F8C004912DC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA3B23FC2656AD1600D4D868 /* ModelAPI */,
 				FAF60A11264D20C2004912DC /* MoneyUsage.swift */,
 				FAF60A19264D6778004912DC /* Dream.swift */,
 				FAF60A30264EB972004912DC /* Wallet.swift */,
+				FA547633264FAB6600B5E40B /* CategorySelection.swift */,
+				FA672ABB264FFEC1004F42E6 /* User.swift */,
+				FA2D28E32650CC66009B02B2 /* ConfirmationStatus.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -232,6 +311,8 @@
 			children = (
 				FAF60A07264D1040004912DC /* AddUsageViewController.swift */,
 				FAF60A08264D1040004912DC /* AddUsageViewController.xib */,
+				FA547639264FBE2500B5E40B /* UsageDetailViewController.swift */,
+				FA54763A264FBE2500B5E40B /* UsageDetailViewController.xib */,
 				FAF60A0C264D1BBF004912DC /* EditUsageViewController.swift */,
 				FAF60A0D264D1BBF004912DC /* EditUsageViewController.xib */,
 				FAF60A1C264E47A6004912DC /* AddDreamViewController.swift */,
@@ -248,8 +329,19 @@
 			isa = PBXGroup;
 			children = (
 				FAF60A2D264EB223004912DC /* ConvertVariable.swift */,
+				FA547636264FBAA500B5E40B /* ButtonConfig.swift */,
+				FA672ABE265012A6004F42E6 /* DateTime.swift */,
 			);
 			path = Method;
+			sourceTree = "<group>";
+		};
+		FAF60A39264F9380004912DC /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				FAF60A33264F8750004912DC /* NotFoundView.swift */,
+				FAF60A36264F8780004912DC /* NotFoundView.xib */,
+			);
+			path = Reusable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,7 +415,9 @@
 				FAF609EA264CE79A004912DC /* Poppins-MediumItalic.ttf in Resources */,
 				FAF609FA264CF075004912DC /* HomeTableViewCell.xib in Resources */,
 				FAF609B2264CE1DB004912DC /* Assets.xcassets in Resources */,
+				FA7656A6264FA3BE00CD6C85 /* CategoryCollectionViewCell.xib in Resources */,
 				FAF609E4264CE79A004912DC /* Poppins-Italic.ttf in Resources */,
+				FA672AB9264FF59A004F42E6 /* SelectCollectionViewCell.xib in Resources */,
 				FAF609F0264CE79A004912DC /* Poppins-Regular.ttf in Resources */,
 				FAF609EF264CE79A004912DC /* Poppins-Thin.ttf in Resources */,
 				FAF609E2264CE79A004912DC /* Poppins-ExtraBoldItalic.ttf in Resources */,
@@ -332,12 +426,14 @@
 				FAF609E3264CE79A004912DC /* Poppins-Medium.ttf in Resources */,
 				FAF609C7264CE66B004912DC /* DreamViewController.xib in Resources */,
 				FAF609ED264CE79A004912DC /* Poppins-ExtraLight.ttf in Resources */,
+				FA54763C264FBE2500B5E40B /* UsageDetailViewController.xib in Resources */,
 				FAF609E9264CE79A004912DC /* Poppins-Black.ttf in Resources */,
 				FAF609E7264CE79A004912DC /* Poppins-ThinItalic.ttf in Resources */,
 				FAF609EC264CE79A004912DC /* Poppins-ExtraBold.ttf in Resources */,
 				FAF60A2A264E482D004912DC /* EditDreamViewController.xib in Resources */,
 				FAF60A02264CF801004912DC /* MainTabController.xib in Resources */,
 				FAF609F3264CE79A004912DC /* Poppins-SemiBold.ttf in Resources */,
+				FAF60A37264F8780004912DC /* NotFoundView.xib in Resources */,
 				FAF60A25264E47DD004912DC /* DreamDetailViewController.xib in Resources */,
 				FAF609E6264CE79A004912DC /* Poppins-Light.ttf in Resources */,
 				FAF609C1264CE63A004912DC /* HomeViewController.xib in Resources */,
@@ -353,15 +449,31 @@
 			files = (
 				FAF609CB264CE688004912DC /* ProfileViewController.swift in Sources */,
 				FAF60A0E264D1BBF004912DC /* EditUsageViewController.swift in Sources */,
+				FA2D28E42650CC66009B02B2 /* ConfirmationStatus.swift in Sources */,
 				FAF60A12264D20C2004912DC /* MoneyUsage.swift in Sources */,
+				FA672ABC264FFEC1004F42E6 /* User.swift in Sources */,
+				FA3B23F4265650A700D4D868 /* UserResponse.swift in Sources */,
 				FAF60A1E264E47A6004912DC /* AddDreamViewController.swift in Sources */,
+				FA3B23FE2656AD4300D4D868 /* WalletResponse.swift in Sources */,
+				FA3B23ED26561D8A00D4D868 /* MoneyService.swift in Sources */,
 				FAF60A16264D655A004912DC /* DreamTableViewCell.swift in Sources */,
+				FA547637264FBAA500B5E40B /* ButtonConfig.swift in Sources */,
 				FAF609F9264CF075004912DC /* HomeTableViewCell.swift in Sources */,
+				FA54763B264FBE2500B5E40B /* UsageDetailViewController.swift in Sources */,
+				FA672AB8264FF59A004F42E6 /* SelectCollectionViewCell.swift in Sources */,
+				FA3B23FA2656565D00D4D868 /* UserService.swift in Sources */,
+				FA672ABF265012A6004F42E6 /* DateTime.swift in Sources */,
+				FA3B24022656ADF800D4D868 /* WalletService.swift in Sources */,
 				FAF60A01264CF801004912DC /* MainTabController.swift in Sources */,
 				FAF60A2E264EB223004912DC /* ConvertVariable.swift in Sources */,
 				FAF609A9264CE1DA004912DC /* AppDelegate.swift in Sources */,
 				FAF60A09264D1040004912DC /* AddUsageViewController.swift in Sources */,
+				FA547634264FAB6600B5E40B /* CategorySelection.swift in Sources */,
+				FA547641264FC1C200B5E40B /* Colors.swift in Sources */,
+				FA7656A5264FA3BE00CD6C85 /* CategoryCollectionViewCell.swift in Sources */,
+				FA3B23F12656476B00D4D868 /* TransactionResponse.swift in Sources */,
 				FAF60A24264E47DD004912DC /* DreamDetailViewController.swift in Sources */,
+				FAF60A34264F8750004912DC /* NotFoundView.swift in Sources */,
 				FAF609C6264CE66B004912DC /* DreamViewController.swift in Sources */,
 				FAF609AB264CE1DA004912DC /* SceneDelegate.swift in Sources */,
 				FAF60A29264E482D004912DC /* EditDreamViewController.swift in Sources */,

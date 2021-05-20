@@ -18,42 +18,62 @@ class DreamDetailViewController: UIViewController {
     @IBOutlet weak var targetAmount: UILabel!
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var backBtn: UIButton!
-    
     @IBOutlet weak var progressView: UIView!
     
-    let mainBlue = UIColor(red: 80.0/255.0, green: 105.0/255.0, blue: 184.0/255.0, alpha: 1.0)
-    
     var passIndex: Int? = nil
-    var passDreamTitle: String = ""
-    var passBalance: String = ""
-    var passCurrentAmount: Decimal = 0
-    var passTargetAmount: Decimal = 0
     var passProgress: Float? = 0
-    
+    var convert = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(passProgress ?? 0)
+        passProgress ?? 0 >= 1 ? enabledBtn(confirmBtn) : disabledBtn(confirmBtn)
         componentConfig()
-        passData()
+        receiveData()
     
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        passProgress ?? 0 >= 1 ? enabledBtn(confirmBtn) : disabledBtn(confirmBtn)
+        componentConfig()
+        receiveData()
     }
 
     @IBAction func editBtn(_ sender: UIButton) {
         let editDreamViewController = EditDreamViewController(nibName: "EditDreamViewController", bundle: nil)
         editDreamViewController.passIndex = passIndex
-        editDreamViewController.passDreamTitle = passDreamTitle
-        editDreamViewController.passCurrentAmount = passCurrentAmount
-        editDreamViewController.passTargetAmount = passTargetAmount
         editDreamViewController.modalPresentationStyle = .fullScreen
         present(editDreamViewController, animated: true, completion: nil)
     }
 
-    @IBAction func BackToHome(_ sender: UIButton) {
-        let mainTabController = MainTabController(nibName: "MainTabController", bundle: nil)
-        mainTabController.modalPresentationStyle = .fullScreen
-        mainTabController.selectedIndex = 1
-        present(mainTabController, animated: false, completion: nil)
+    @IBAction func backToHome(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func dreamAchieved(_ sender: UIButton) {
+        
+        let confirmAlert = UIAlertController(title: "Selamat", message: "Impian \"\(dream[passIndex ?? 0].dreamTitle )\" Anda berhasil tercapai! \nTambahkan Penggunaan?", preferredStyle: .alert)
+        
+        let confirm = UIAlertAction(title: "OK", style: .default) { [self] (_) -> Void in
+            
+            moneyUsage.append(MoneyUsage(id: (moneyUsage.endIndex)+1, status: .moneyOut, usageTitle: "Impian \(dream[passIndex!].dreamTitle)", date: Date().dateTime, usageAmount: dream[passIndex!].dreamAmount))
+            
+            confirmationStatus.append(ConfirmationStatus(dreamId: passIndex!))
+            
+            wallets[0].totalMoneyOut! += dream[passIndex!].dreamAmount
+            users[0].balance = ((wallets[0].totalMoneyIn!)-(wallets[0].totalMoneyOut!))
+            
+            dream.remove(at: passIndex!)
+            
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        let cancel = UIAlertAction(title: "Batal", style: .cancel)
+        
+        confirmAlert.addAction(confirm)
+        confirmAlert.addAction(cancel)
+        
+        present(confirmAlert, animated: true, completion: nil)
     }
 }
 
@@ -67,20 +87,29 @@ extension DreamDetailViewController {
         progressView.layer.cornerRadius = 10
         
         confirmBtn.layer.cornerRadius = 20
-        confirmBtn.layer.backgroundColor = mainBlue.cgColor
         
         backBtn.layer.cornerRadius = 20
         backBtn.layer.borderWidth = 3.0
-        backBtn.layer.borderColor = mainBlue.cgColor
+        backBtn.layer.borderColor = Colors.mainBlue.cgColor
         
     }
     
-    fileprivate func passData(){
+    fileprivate func receiveData() {
         
-        dreamTitle.text = passDreamTitle
-        currentAmount.text = setAmountString(amountValue: passCurrentAmount)
-        targetAmount.text = setAmountString(amountValue: passTargetAmount)
-        progress.progress = passProgress ?? 0
-        
+        if dream.isEmpty == false {
+            passProgress = (passProgress ?? 0 > 1) ? 1 : passProgress
+            dreamTitle.text = dream[passIndex ?? 0].dreamTitle
+//            currentAmount.text = convert.setAmountString(amountValue: users[0].balance ?? 0)
+//            targetAmount.text = convert.setAmountString(amountValue: dream[passIndex ?? 0].dreamAmount)
+            
+            currentAmount.text = users[0].balance?.setAmountString ?? ""
+            targetAmount.text = dream[passIndex ?? 0].dreamAmount.setAmountString
+            
+            progress.progress = passProgress ?? 0
+            percentage.text = "\(Int(Float(passProgress ?? 0)*100))%"
+//            balance.text = "Rp. \(convert.setDecimalToString(amountValue: users[0].balance ?? 0))"
+            balance.text = "Rp. \(users[0].balance?.setAmountString ?? "")"
+        }
     }
+    
 }

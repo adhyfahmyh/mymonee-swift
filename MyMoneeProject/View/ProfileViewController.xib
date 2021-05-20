@@ -18,6 +18,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="MyMoneeProject" customModuleProvider="target">
             <connections>
+                <outlet property="editName" destination="0Fn-dl-4r0" id="YSM-Q8-FjA"/>
+                <outlet property="editPhoto" destination="x3R-dB-umz" id="Kl9-Au-hr7"/>
+                <outlet property="editSaveBtn" destination="AqC-d0-jKj" id="gC9-oc-riB"/>
+                <outlet property="profileName" destination="CPG-c2-NdZ" id="HTS-xY-eIx"/>
+                <outlet property="profilePhoto" destination="zOG-ev-cii" id="wCw-oh-1Ne"/>
+                <outlet property="profileText" destination="pzF-dc-52j" id="2WY-if-sts"/>
+                <outlet property="tapName" destination="Gba-2B-zVy" id="qzH-u7-r9a"/>
+                <outlet property="tapPhoto" destination="dZY-0m-5SS" id="4lp-2I-ZjJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,36 +37,104 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1V1-9X-0Lc">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="382"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_down" translatesAutoresizingMaskIntoConstraints="NO" id="zOG-ev-cii">
-                            <rect key="frame" x="152" y="100" width="110" height="110"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZY-0m-5SS">
+                            <rect key="frame" x="157" y="100" width="100" height="100"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zOG-ev-cii">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="Qsg-AY-SoN"/>
+                                        <constraint firstAttribute="height" constant="100" id="fUs-KS-aHb"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="50"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit_photo" translatesAutoresizingMaskIntoConstraints="NO" id="x3R-dB-umz">
+                                    <rect key="frame" x="80" y="80" width="20" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="20" id="EKO-q3-Swi"/>
+                                        <constraint firstAttribute="height" constant="20" id="TkE-1y-agE"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <gestureRecognizers/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="110" id="Qsg-AY-SoN"/>
-                                <constraint firstAttribute="height" constant="110" id="fUs-KS-aHb"/>
+                                <constraint firstAttribute="width" constant="100" id="1zh-3i-DFS"/>
+                                <constraint firstAttribute="trailing" secondItem="x3R-dB-umz" secondAttribute="trailing" id="Pit-A0-KcU"/>
+                                <constraint firstItem="zOG-ev-cii" firstAttribute="centerY" secondItem="dZY-0m-5SS" secondAttribute="centerY" id="XHx-za-APT"/>
+                                <constraint firstAttribute="bottom" secondItem="x3R-dB-umz" secondAttribute="bottom" id="dUt-KN-XSp"/>
+                                <constraint firstItem="zOG-ev-cii" firstAttribute="centerX" secondItem="dZY-0m-5SS" secondAttribute="centerX" id="tag-nS-7cg"/>
+                                <constraint firstAttribute="height" constant="100" id="z85-Td-cWc"/>
                             </constraints>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Adhyfa Fahmy Hidayat" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPG-c2-NdZ">
-                            <rect key="frame" x="80" y="230" width="254" height="28"/>
-                            <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="20"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bagus! Pengeluaranmu lebih sedikit dari pemasukan" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzF-dc-52j">
-                            <rect key="frame" x="74" y="264" width="266" height="108"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="50"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="rxw-l9-9VW" appends="YES" id="hg7-HG-xWC"/>
+                            </connections>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gba-2B-zVy">
+                            <rect key="frame" x="37" y="220" width="340" height="40"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPG-c2-NdZ">
+                                    <rect key="frame" x="143" y="0.0" width="54.5" height="40"/>
+                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="20"/>
+                                    <color key="textColor" systemColor="systemGray5Color"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit_name" translatesAutoresizingMaskIntoConstraints="NO" id="0Fn-dl-4r0">
+                                    <rect key="frame" x="202.5" y="10" width="20" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="J5y-AC-O5X"/>
+                                        <constraint firstAttribute="width" constant="20" id="SHi-0H-dPe"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <gestureRecognizers/>
+                            <constraints>
+                                <constraint firstItem="0Fn-dl-4r0" firstAttribute="leading" secondItem="CPG-c2-NdZ" secondAttribute="trailing" constant="5" id="0dC-gl-Tmf"/>
+                                <constraint firstItem="CPG-c2-NdZ" firstAttribute="centerX" secondItem="Gba-2B-zVy" secondAttribute="centerX" id="L98-Wh-kxv"/>
+                                <constraint firstAttribute="width" constant="340" id="W7R-Jh-S9u"/>
+                                <constraint firstItem="0Fn-dl-4r0" firstAttribute="centerY" secondItem="Gba-2B-zVy" secondAttribute="centerY" id="hKj-LI-bdL"/>
+                                <constraint firstItem="CPG-c2-NdZ" firstAttribute="top" secondItem="Gba-2B-zVy" secondAttribute="top" id="qXc-t5-vPS"/>
+                                <constraint firstAttribute="height" constant="40" id="xSq-RG-sdu"/>
+                                <constraint firstItem="CPG-c2-NdZ" firstAttribute="centerY" secondItem="Gba-2B-zVy" secondAttribute="centerY" id="yBA-Lj-Gjq"/>
+                            </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="vyB-hZ-cdw" appends="YES" id="MSY-vW-iGH"/>
+                            </connections>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzF-dc-52j">
+                            <rect key="frame" x="74" y="266" width="266" height="106"/>
                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AqC-d0-jKj">
+                            <rect key="frame" x="346" y="64" width="48" height="32"/>
+                            <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="14"/>
+                            <state key="normal" title="Button">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="editAction:" destination="-1" eventType="touchUpInside" id="duc-Wj-rWZ"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.31372549019607843" green="0.41176470588235292" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="CPG-c2-NdZ" secondAttribute="trailing" constant="80" id="1ud-QE-XJQ"/>
-                        <constraint firstItem="CPG-c2-NdZ" firstAttribute="leading" secondItem="1V1-9X-0Lc" secondAttribute="leading" constant="80" id="SNB-6a-1Qv"/>
-                        <constraint firstItem="zOG-ev-cii" firstAttribute="top" secondItem="1V1-9X-0Lc" secondAttribute="top" constant="100" id="avY-eH-Ewc"/>
-                        <constraint firstItem="pzF-dc-52j" firstAttribute="top" secondItem="CPG-c2-NdZ" secondAttribute="bottom" constant="6" id="enC-He-XxR"/>
-                        <constraint firstItem="CPG-c2-NdZ" firstAttribute="top" secondItem="zOG-ev-cii" secondAttribute="bottom" constant="20" id="slT-yS-bpP"/>
+                        <constraint firstItem="dZY-0m-5SS" firstAttribute="top" secondItem="1V1-9X-0Lc" secondAttribute="top" constant="100" id="WVe-lv-A6O"/>
+                        <constraint firstItem="dZY-0m-5SS" firstAttribute="centerX" secondItem="1V1-9X-0Lc" secondAttribute="centerX" id="X8U-nB-K7o"/>
+                        <constraint firstItem="Gba-2B-zVy" firstAttribute="centerX" secondItem="1V1-9X-0Lc" secondAttribute="centerX" id="jhb-d7-ydm"/>
+                        <constraint firstItem="Gba-2B-zVy" firstAttribute="top" secondItem="dZY-0m-5SS" secondAttribute="bottom" constant="20" id="mog-2J-blp"/>
+                        <constraint firstItem="pzF-dc-52j" firstAttribute="top" secondItem="Gba-2B-zVy" secondAttribute="bottom" constant="6" id="myX-nF-E9K"/>
                         <constraint firstAttribute="trailing" secondItem="pzF-dc-52j" secondAttribute="trailing" constant="74" id="tRs-cw-akb"/>
                         <constraint firstItem="pzF-dc-52j" firstAttribute="leading" secondItem="1V1-9X-0Lc" secondAttribute="leading" constant="74" id="uXj-ok-PqQ"/>
-                        <constraint firstItem="zOG-ev-cii" firstAttribute="centerX" secondItem="1V1-9X-0Lc" secondAttribute="centerX" id="w6m-5V-sxf"/>
                         <constraint firstAttribute="bottom" secondItem="pzF-dc-52j" secondAttribute="bottom" constant="10" id="wj9-F0-fSz"/>
                     </constraints>
                 </view>
@@ -68,16 +144,32 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="1V1-9X-0Lc" secondAttribute="bottom" constant="480" id="3La-MX-Vwe"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1V1-9X-0Lc" secondAttribute="trailing" id="Kc2-tF-qX7"/>
+                <constraint firstItem="AqC-d0-jKj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="ObG-Jw-apV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AqC-d0-jKj" secondAttribute="trailing" constant="20" id="TNR-Ed-2H7"/>
                 <constraint firstItem="1V1-9X-0Lc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="lQK-Z7-PV4"/>
                 <constraint firstItem="1V1-9X-0Lc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="r3Q-fV-ufs"/>
             </constraints>
             <point key="canvasLocation" x="-196" y="67"/>
         </view>
+        <tapGestureRecognizer id="rxw-l9-9VW">
+            <connections>
+                <action selector="editPhotoAction:" destination="-1" id="Lph-vT-2cY"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="vyB-hZ-cdw">
+            <connections>
+                <action selector="editNameAction:" destination="-1" id="AhS-wu-uBE"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="arrow_down" width="512" height="512"/>
+        <image name="edit_name" width="512" height="512"/>
+        <image name="edit_photo" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -19,11 +19,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditDreamViewController" customModule="MyMoneeProject" customModuleProvider="target">
             <connections>
                 <outlet property="deleteBtn" destination="eUM-Af-rQu" id="Jda-TQ-ocE"/>
-                <outlet property="dreamAmount" destination="93d-WC-iqH" id="Zas-bu-nfh"/>
-                <outlet property="dreamTitle" destination="Cuf-zK-I9b" id="icW-i4-PJQ"/>
-                <outlet property="fieldCurrentAmount" destination="r7d-My-YfI" id="WeJ-EA-DwF"/>
                 <outlet property="fieldDreamTitle" destination="j7i-VV-M66" id="DjT-us-cLK"/>
-                <outlet property="fieldTargetAmount" destination="iNc-hb-NqT" id="qJB-wD-fVe"/>
+                <outlet property="fieldTargetAmount" destination="r7d-My-YfI" id="2xE-4i-KwF"/>
                 <outlet property="view" destination="qQ9-eB-1y8" id="M0k-HP-bgw"/>
             </connections>
         </placeholder>
@@ -87,7 +84,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jumlah Saat Ini (Rp)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93d-WC-iqH">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target Capaian (Rp)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93d-WC-iqH">
                     <rect key="frame" x="16" y="208.5" width="382" height="19"/>
                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                     <nil key="textColor"/>
@@ -96,19 +93,13 @@
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j7i-VV-M66">
                     <rect key="frame" x="16" y="155" width="382" height="37.5"/>
                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="24"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r7d-My-YfI">
                     <rect key="frame" x="16" y="233.5" width="382" height="37.5"/>
                     <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="24"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad"/>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jumlah Target (Rp)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fy-yR-lcs">
-                    <rect key="frame" x="16" y="287" width="382" height="19"/>
-                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XxU-O8-4Rj">
                     <rect key="frame" x="16" y="722" width="382" height="50"/>
                     <color key="backgroundColor" red="0.31372549020000001" green="0.41176470590000003" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -128,28 +119,19 @@
                         <action selector="editDream:" destination="-1" eventType="touchUpInside" id="NBc-dG-Wna"/>
                     </connections>
                 </button>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iNc-hb-NqT">
-                    <rect key="frame" x="16" y="312" width="382" height="37.5"/>
-                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="24"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
             </subviews>
             <viewLayoutGuide key="safeArea" id="w5Q-ju-78i"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="eUM-Af-rQu" firstAttribute="leading" secondItem="w5Q-ju-78i" secondAttribute="leading" constant="16" id="15Z-oq-pnu"/>
-                <constraint firstItem="8fy-yR-lcs" firstAttribute="leading" secondItem="w5Q-ju-78i" secondAttribute="leading" constant="16" id="7LN-j9-fB0"/>
-                <constraint firstItem="iNc-hb-NqT" firstAttribute="leading" secondItem="w5Q-ju-78i" secondAttribute="leading" constant="16" id="7MN-qL-xYd"/>
                 <constraint firstItem="r7d-My-YfI" firstAttribute="top" secondItem="93d-WC-iqH" secondAttribute="bottom" constant="6" id="8B8-Nn-95P"/>
                 <constraint firstItem="w5Q-ju-78i" firstAttribute="trailing" secondItem="Cuf-zK-I9b" secondAttribute="trailing" constant="16" id="CkX-5z-7g9"/>
                 <constraint firstItem="w5Q-ju-78i" firstAttribute="trailing" secondItem="XxU-O8-4Rj" secondAttribute="trailing" constant="16" id="EGq-Ws-dXJ"/>
                 <constraint firstItem="j7i-VV-M66" firstAttribute="top" secondItem="Cuf-zK-I9b" secondAttribute="bottom" constant="6" id="EnD-Ik-iyw"/>
                 <constraint firstItem="w5Q-ju-78i" firstAttribute="bottom" secondItem="eUM-Af-rQu" secondAttribute="bottom" constant="20" id="FbM-82-Zq6"/>
-                <constraint firstItem="w5Q-ju-78i" firstAttribute="trailing" secondItem="8fy-yR-lcs" secondAttribute="trailing" constant="16" id="G1t-hs-liu"/>
                 <constraint firstItem="w5Q-ju-78i" firstAttribute="trailing" secondItem="eUM-Af-rQu" secondAttribute="trailing" constant="16" id="GfV-UK-mwl"/>
                 <constraint firstItem="93d-WC-iqH" firstAttribute="top" secondItem="j7i-VV-M66" secondAttribute="bottom" constant="16" id="J1U-yv-AxG"/>
                 <constraint firstItem="eUM-Af-rQu" firstAttribute="top" secondItem="XxU-O8-4Rj" secondAttribute="bottom" constant="20" id="KCX-hf-TGP"/>
-                <constraint firstItem="iNc-hb-NqT" firstAttribute="top" secondItem="8fy-yR-lcs" secondAttribute="bottom" constant="6" id="KxG-5d-7wR"/>
                 <constraint firstItem="w5Q-ju-78i" firstAttribute="trailing" secondItem="9Cs-Dj-7mA" secondAttribute="trailing" constant="180" id="Lf7-e6-7i4"/>
                 <constraint firstItem="9Cs-Dj-7mA" firstAttribute="leading" secondItem="w5Q-ju-78i" secondAttribute="leading" constant="16" id="MRk-LS-B4j"/>
                 <constraint firstItem="w5Q-ju-78i" firstAttribute="trailing" secondItem="93d-WC-iqH" secondAttribute="trailing" constant="16" id="RFR-ML-Fi6"/>
@@ -159,12 +141,10 @@
                 <constraint firstItem="r7d-My-YfI" firstAttribute="leading" secondItem="w5Q-ju-78i" secondAttribute="leading" constant="16" id="XsI-uH-dLv"/>
                 <constraint firstItem="Cuf-zK-I9b" firstAttribute="top" secondItem="9Cs-Dj-7mA" secondAttribute="bottom" constant="40" id="YB5-4p-ej1"/>
                 <constraint firstItem="w5Q-ju-78i" firstAttribute="trailing" secondItem="j7i-VV-M66" secondAttribute="trailing" constant="16" id="ZMt-mW-TuZ"/>
-                <constraint firstItem="8fy-yR-lcs" firstAttribute="top" secondItem="r7d-My-YfI" secondAttribute="bottom" constant="16" id="iMB-Zi-6r1"/>
                 <constraint firstItem="w5Q-ju-78i" firstAttribute="trailing" secondItem="r7d-My-YfI" secondAttribute="trailing" constant="16" id="oJ6-p8-O1d"/>
                 <constraint firstItem="93d-WC-iqH" firstAttribute="leading" secondItem="w5Q-ju-78i" secondAttribute="leading" constant="16" id="trQ-Kb-H2H"/>
                 <constraint firstItem="eUM-Af-rQu" firstAttribute="centerX" secondItem="w5Q-ju-78i" secondAttribute="centerX" id="x1M-7j-KcQ"/>
                 <constraint firstItem="Cuf-zK-I9b" firstAttribute="leading" secondItem="w5Q-ju-78i" secondAttribute="leading" constant="16" id="yK3-7f-x8G"/>
-                <constraint firstItem="w5Q-ju-78i" firstAttribute="trailing" secondItem="iNc-hb-NqT" secondAttribute="trailing" constant="16" id="yOw-YS-CmP"/>
             </constraints>
             <point key="canvasLocation" x="34.782608695652179" y="66.964285714285708"/>
         </view>

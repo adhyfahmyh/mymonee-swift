@@ -17,6 +17,7 @@
             <connections>
                 <outlet property="addDream" destination="4Th-yJ-YSY" id="fyu-tX-CvX"/>
                 <outlet property="dreamHistoryTable" destination="EDb-W6-2zs" id="APa-lB-3p3"/>
+                <outlet property="notFoundView" destination="phG-mN-P0Z" id="TGh-GH-QEb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,6 +26,16 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Impian" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVf-Ra-pYN">
+                    <rect key="frame" x="16" y="64" width="87" height="34"/>
+                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="24"/>
+                    <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EDb-W6-2zs">
+                    <rect key="frame" x="0.0" y="128" width="414" height="734"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Th-yJ-YSY">
                     <rect key="frame" x="354" y="64" width="40" height="40"/>
                     <constraints>
@@ -36,16 +47,9 @@
                         <action selector="addDream:" destination="-1" eventType="touchUpInside" id="m7Y-7R-5lZ"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Impian" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVf-Ra-pYN">
-                    <rect key="frame" x="16" y="64" width="87" height="34"/>
-                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="24"/>
-                    <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EDb-W6-2zs">
-                    <rect key="frame" x="0.0" y="128" width="414" height="734"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phG-mN-P0Z" customClass="NotFoundView" customModule="MyMoneeProject" customModuleProvider="target">
+                    <rect key="frame" x="16" y="308" width="382" height="290"/>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.94117647058823528" green="0.94901960784313721" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,7 +61,11 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4Th-yJ-YSY" secondAttribute="trailing" constant="20" id="ERy-CM-Gqg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EDb-W6-2zs" secondAttribute="trailing" id="OW3-Uc-Kum"/>
                 <constraint firstItem="4Th-yJ-YSY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="S3L-4l-YIw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="phG-mN-P0Z" secondAttribute="bottom" constant="264" id="YP4-rO-pM0"/>
+                <constraint firstItem="phG-mN-P0Z" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="djq-zd-4ux"/>
+                <constraint firstItem="phG-mN-P0Z" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="ecZ-GT-h4Y"/>
                 <constraint firstItem="EDb-W6-2zs" firstAttribute="top" secondItem="LVf-Ra-pYN" secondAttribute="bottom" constant="30" id="f7t-Hi-U8E"/>
+                <constraint firstItem="phG-mN-P0Z" firstAttribute="leading" secondItem="LVf-Ra-pYN" secondAttribute="leading" id="x2D-qP-J6R"/>
             </constraints>
             <point key="canvasLocation" x="139" y="67"/>
         </view>

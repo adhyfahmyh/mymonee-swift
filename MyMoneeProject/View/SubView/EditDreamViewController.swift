@@ -10,19 +10,14 @@ import UIKit
 class EditDreamViewController: UIViewController {
 
     @IBOutlet weak var deleteBtn: UIButton!
-    @IBOutlet weak var dreamTitle: UILabel!
-    @IBOutlet weak var dreamAmount: UILabel!
     @IBOutlet weak var fieldDreamTitle: UITextField!
-    @IBOutlet weak var fieldCurrentAmount: UITextField!
     @IBOutlet weak var fieldTargetAmount: UITextField!
     
     
     let mainRed = UIColor(red: 235.0/255.0, green: 87.0/255.0, blue: 87.0/255.0, alpha: 1.0)
     
     var passIndex: Int? = nil
-    var passDreamTitle = ""
-    var passCurrentAmount: Decimal = 0
-    var passTargetAmount: Decimal = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,38 +26,57 @@ class EditDreamViewController: UIViewController {
         deleteBtn.layer.borderWidth = 3.0
         deleteBtn.layer.borderColor = mainRed.cgColor
         
-        fieldDreamTitle.text = passDreamTitle
-        fieldCurrentAmount.text = setAmountString(amountValue: passCurrentAmount).replacingOccurrences(of: ".", with: "")
-        fieldTargetAmount.text = setAmountString(amountValue: passTargetAmount).replacingOccurrences(of: ".", with: "")
+        fieldDreamTitle.text = dream[passIndex!].dreamTitle
+//        fieldTargetAmount.text = convert.setAmountString(amountValue: dream[passIndex!].dreamAmount).replacingOccurrences(of: ".", with: "")
+        fieldTargetAmount.text = dream[passIndex!].dreamAmount.setAmountString.replacingOccurrences(of: ".", with: "")
         
     }
 
     @IBAction func backBtn(_ sender: UITapGestureRecognizer) {
-        let dreamDetailViewController = DreamDetailViewController(nibName: "DreamDetailViewController", bundle: nil)
-        dreamDetailViewController.modalPresentationStyle = .fullScreen
-        present(dreamDetailViewController, animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func deleteBtn(_ sender: UIButton) {
-        dream.remove(at: passIndex!)
+        let deleteAlert = UIAlertController(title: "Menghapus Impian", message: "Apakah Anda yakin menghapus \"\(dream[passIndex!].dreamTitle)\"?", preferredStyle: .alert)
         
-        let mainTabController = MainTabController(nibName: "MainTabController", bundle: nil)
-
-        mainTabController.modalPresentationStyle = .fullScreen
-        mainTabController.selectedIndex = 1
-        present(mainTabController, animated: true, completion: nil)
-    }
-    @IBAction func editDream(_ sender: UIButton) {
-        passCurrentAmount = setStringToDecimal(amountValue: fieldCurrentAmount.text ?? "")
-        passTargetAmount = setStringToDecimal(amountValue: fieldTargetAmount.text ?? "")
+        let tapDelete = UIAlertAction(title: "Hapus", style: .destructive) { [self] (_) -> Void in
+            deleteAction()
+        }
         
-        dream[passIndex!] = Dream(dreamTitle: fieldDreamTitle.text , dreamCurrentAmount: passCurrentAmount, dreamTargetAmount: passTargetAmount)
+        let tapCancel = UIAlertAction(title: "Cancel", style: .cancel)
         
-        let mainTabController = MainTabController(nibName: "MainTabController", bundle: nil)
-
-        mainTabController.modalPresentationStyle = .fullScreen
-        mainTabController.selectedIndex = 1
-        present(mainTabController, animated: true, completion: nil)
+        deleteAlert.addAction(tapDelete)
+        deleteAlert.addAction(tapCancel)
+        
+        present(deleteAlert, animated: true, completion: nil)
+        
     }
     
+    @IBAction func editDream(_ sender: UIButton) {
+        let dreamAmount = fieldTargetAmount.text?.setStringToDecimal ?? 0
+        
+        
+        dream[passIndex!] = Dream(id: dream[passIndex!].id, dreamTitle: fieldDreamTitle.text ?? "", dreamAmount: dreamAmount)
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+}
+
+extension EditDreamViewController {
+    
+    fileprivate func deleteAction() {
+        let dreamDetailViewController = DreamDetailViewController(nibName: "DreamDetailViewController", bundle: nil)
+        dreamDetailViewController.passIndex = passIndex
+        dream.remove(at: passIndex!)
+        
+//        let mainTabController = MainTabController(nibName: "MainTabController", bundle: nil)
+//
+//        mainTabController.modalPresentationStyle = .fullScreen
+//        mainTabController.selectedIndex = 1
+//        present(mainTabController, animated: false, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+    }
 }

@@ -18,6 +18,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddUsageViewController" customModule="MyMoneeProject" customModuleProvider="target">
             <connections>
+                <outlet property="categoryCollection" destination="qOD-JC-rmi" id="EkS-Yb-KOR"/>
+                <outlet property="fieldAmount" destination="sm8-rp-jQq" id="qzY-t3-efi"/>
+                <outlet property="fieldTitle" destination="9Fn-le-Lzj" id="05p-Nr-Ten"/>
+                <outlet property="saveBtn" destination="p7h-cZ-Xwz" id="yUo-sC-d86"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -59,7 +63,6 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7h-cZ-Xwz">
                     <rect key="frame" x="16" y="792" width="382" height="50"/>
-                    <color key="backgroundColor" systemColor="systemGrayColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="Dja-u8-qZk"/>
                     </constraints>
@@ -72,6 +75,9 @@
                             <integer key="value" value="15"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="saveData:" destination="-1" eventType="touchUpInside" id="ePp-dZ-BaQ"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Judul" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3A-J0-iY1">
                     <rect key="frame" x="16" y="130" width="382" height="19"/>
@@ -80,35 +86,51 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jumlah (Rp)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ild-tZ-hSJ">
-                    <rect key="frame" x="16" y="205" width="382" height="19"/>
+                    <rect key="frame" x="16" y="208.5" width="382" height="19"/>
                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Fn-le-Lzj">
-                    <rect key="frame" x="16" y="155" width="382" height="34"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <rect key="frame" x="16" y="155" width="382" height="37.5"/>
+                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="24"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sm8-rp-jQq">
-                    <rect key="frame" x="16" y="230" width="382" height="34"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <rect key="frame" x="16" y="233.5" width="382" height="37.5"/>
+                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="24"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kategori Penggunaan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7H-Tv-q03">
-                    <rect key="frame" x="16" y="280" width="382" height="19"/>
+                    <rect key="frame" x="16" y="287" width="382" height="19"/>
                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="qOD-JC-rmi">
+                    <rect key="frame" x="16" y="312" width="382" height="150"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="382" id="v4c-Wl-O4h"/>
+                        <constraint firstAttribute="height" constant="150" id="wYX-Em-Mt5"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yHx-e8-DfU">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="qOD-JC-rmi" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="1zG-Tq-u7Q"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ild-tZ-hSJ" secondAttribute="trailing" constant="16" id="5NO-Ek-HRL"/>
                 <constraint firstItem="Ild-tZ-hSJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="9EW-cc-bzk"/>
                 <constraint firstItem="sm8-rp-jQq" firstAttribute="top" secondItem="Ild-tZ-hSJ" secondAttribute="bottom" constant="6" id="9gm-qz-k5D"/>
                 <constraint firstItem="p7h-cZ-Xwz" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="N6D-jM-t27"/>
+                <constraint firstItem="qOD-JC-rmi" firstAttribute="top" secondItem="D7H-Tv-q03" secondAttribute="bottom" constant="6" id="Nrt-hK-qJJ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sm8-rp-jQq" secondAttribute="trailing" constant="16" id="Ve8-h2-2h6"/>
                 <constraint firstItem="c3A-J0-iY1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="YcD-bt-XLm"/>
                 <constraint firstItem="p7h-cZ-Xwz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Zht-6H-H2w"/>
@@ -132,7 +154,7 @@
         </view>
         <tapGestureRecognizer id="wwK-5D-z9u">
             <connections>
-                <action selector="BackToHome:" destination="-1" id="hzD-Iv-4xk"/>
+                <action selector="backToHome:" destination="-1" id="hzD-Iv-4xk"/>
             </connections>
         </tapGestureRecognizer>
     </objects>
@@ -140,9 +162,6 @@
         <image name="btn_back" width="512" height="853"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

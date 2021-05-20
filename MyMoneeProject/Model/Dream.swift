@@ -7,15 +7,14 @@
 
 import Foundation
 struct Dream {
-    var id: Int?
-    var dreamTitle: String?
-    var dreamCurrentAmount: Decimal?
-    var dreamTargetAmount: Decimal?
+    var id: Int
+    var dreamTitle: String
+    var dreamAmount: Decimal
 }
 
 
 var dream: [Dream] =
     [
-        Dream(id: 1, dreamTitle: "Mobil", dreamCurrentAmount: 1000000, dreamTargetAmount: 100000000),
-        Dream(id: 2, dreamTitle: "Sepatu", dreamCurrentAmount: 1000000, dreamTargetAmount: 500000)
+        Dream(id: 1, dreamTitle: "Mobil", dreamAmount: 100000000),
+        Dream(id: 2, dreamTitle: "Sepatu", dreamAmount: 500000)
     ]

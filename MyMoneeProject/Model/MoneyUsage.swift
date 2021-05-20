@@ -7,17 +7,23 @@
 
 import Foundation
 
-struct MoneyUsage {
-    var id: Int?
-    var status: Bool = false
-    var usageTitle: String?
-    var date: String?
-    var usageAmount: String?
-    
+enum moneyStatus {
+    case moneyIn
+    case moneyOut
 }
 
-var moneyUsage: [MoneyUsage] =
-    [
-        MoneyUsage(id: 1, status: true, usageTitle: "Bayar Listrik", date: "now", usageAmount: "1.000.000"),
-        MoneyUsage(id: 2, status: false, usageTitle: "Bayar Listrik", date: "now", usageAmount: "1.000.000")
-    ]
+struct MoneyUsage {
+    var id: Int?
+    var status: moneyStatus
+    var usageTitle: String?
+    var date: String?
+    var usageAmount: Decimal?
+}
+
+var moneyUsage: [MoneyUsage] = []
+//    [
+//        MoneyUsage(id: 1, status: .moneyIn, usageTitle: "THR", date: "12 Mei 2021 07.00", usageAmount: 1000000),
+//        MoneyUsage(id: 2, status: .moneyOut, usageTitle: "Bayar Listrik", date: "12 Mei 2021 13.00", usageAmount: 100000)
+//    ]
+
+

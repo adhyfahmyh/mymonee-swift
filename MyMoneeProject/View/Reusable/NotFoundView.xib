@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-SemiBold.ttf">
+            <string>Poppins-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotFoundView" customModule="MyMoneeProject" customModuleProvider="target">
+            <connections>
+                <outlet property="addUsageBtn" destination="0if-Yr-U3W" id="Iao-a2-nN2"/>
+                <outlet property="notFoundView" destination="OKA-cX-Zxz" id="wP0-uG-OmJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="382" height="248"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OKA-cX-Zxz">
+                    <rect key="frame" x="0.0" y="44" width="382" height="204"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="XN7-ni-7IM">
+                            <rect key="frame" x="35" y="35" width="312" height="134"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Data kamu kosong, " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAB-1r-Zcj">
+                                    <rect key="frame" x="64.5" y="0.0" width="183" height="25.5"/>
+                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
+                                    <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Yuk mulai buat catatan kamu!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zQ-OU-nEh">
+                                    <rect key="frame" x="16" y="39.5" width="280" height="30.5"/>
+                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="18"/>
+                                    <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0if-Yr-U3W">
+                                    <rect key="frame" x="13" y="84" width="286" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="H8X-aT-IdM"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
+                                    <state key="normal" title="Button">
+                                        <color key="titleColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="5zQ-OU-nEh" secondAttribute="trailing" constant="16" id="2UG-RD-kZh"/>
+                                <constraint firstAttribute="trailing" secondItem="fAB-1r-Zcj" secondAttribute="trailing" constant="64.5" id="DBs-0i-7kh"/>
+                                <constraint firstItem="fAB-1r-Zcj" firstAttribute="leading" secondItem="XN7-ni-7IM" secondAttribute="leading" constant="64.5" id="DnU-vK-ppN"/>
+                                <constraint firstItem="5zQ-OU-nEh" firstAttribute="leading" secondItem="XN7-ni-7IM" secondAttribute="leading" constant="16" id="IqN-qq-9lx"/>
+                                <constraint firstItem="fAB-1r-Zcj" firstAttribute="centerX" secondItem="XN7-ni-7IM" secondAttribute="centerX" id="Kgg-Xo-k7x"/>
+                                <constraint firstItem="0if-Yr-U3W" firstAttribute="top" secondItem="5zQ-OU-nEh" secondAttribute="bottom" constant="14" id="Kl6-jm-851"/>
+                                <constraint firstItem="5zQ-OU-nEh" firstAttribute="centerX" secondItem="fAB-1r-Zcj" secondAttribute="centerX" id="T3o-TE-LT9"/>
+                                <constraint firstItem="fAB-1r-Zcj" firstAttribute="top" secondItem="XN7-ni-7IM" secondAttribute="top" id="Ulv-bh-UZA"/>
+                                <constraint firstAttribute="trailing" secondItem="0if-Yr-U3W" secondAttribute="trailing" constant="13" id="Zqe-AW-pIe"/>
+                                <constraint firstItem="0if-Yr-U3W" firstAttribute="centerX" secondItem="5zQ-OU-nEh" secondAttribute="centerX" id="clO-gM-zIP"/>
+                                <constraint firstItem="0if-Yr-U3W" firstAttribute="leading" secondItem="XN7-ni-7IM" secondAttribute="leading" constant="13" id="ddB-jn-Xde"/>
+                                <constraint firstItem="0if-Yr-U3W" firstAttribute="centerX" secondItem="XN7-ni-7IM" secondAttribute="centerX" id="f0P-Vd-5OY"/>
+                                <constraint firstItem="5zQ-OU-nEh" firstAttribute="top" secondItem="XN7-ni-7IM" secondAttribute="top" constant="39.5" id="qhB-Ek-FGF"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="XN7-ni-7IM" secondAttribute="bottom" constant="35" id="3h4-tI-fSY"/>
+                        <constraint firstItem="0if-Yr-U3W" firstAttribute="leading" secondItem="OKA-cX-Zxz" secondAttribute="leading" constant="48" id="ARL-hc-1Nf"/>
+                        <constraint firstItem="XN7-ni-7IM" firstAttribute="centerY" secondItem="OKA-cX-Zxz" secondAttribute="centerY" id="Eha-sd-oIV"/>
+                        <constraint firstItem="XN7-ni-7IM" firstAttribute="centerX" secondItem="OKA-cX-Zxz" secondAttribute="centerX" id="O3L-pL-YGC"/>
+                        <constraint firstAttribute="trailing" secondItem="0if-Yr-U3W" secondAttribute="trailing" constant="48" id="gBA-03-K7Q"/>
+                        <constraint firstAttribute="trailing" secondItem="XN7-ni-7IM" secondAttribute="trailing" constant="35" id="iU4-E6-1mP"/>
+                        <constraint firstItem="XN7-ni-7IM" firstAttribute="leading" secondItem="OKA-cX-Zxz" secondAttribute="leading" constant="35" id="iij-AY-vmw"/>
+                        <constraint firstItem="XN7-ni-7IM" firstAttribute="top" secondItem="OKA-cX-Zxz" secondAttribute="top" constant="35" id="utE-yo-7Gg"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="OKA-cX-Zxz" secondAttribute="top" id="2fo-YM-0at"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="OKA-cX-Zxz" secondAttribute="bottom" id="7HU-4H-O6o"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="OKA-cX-Zxz" secondAttribute="trailing" id="BlB-Va-XXu"/>
+                <constraint firstItem="OKA-cX-Zxz" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="N4t-jx-A0X"/>
+                <constraint firstItem="OKA-cX-Zxz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="i3S-3U-AS7"/>
+                <constraint firstItem="OKA-cX-Zxz" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="jUy-cC-9Ub"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="118.84057971014494" y="83.035714285714278"/>
+        </view>
+    </objects>
+</document>
