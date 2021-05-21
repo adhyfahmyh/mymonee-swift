@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D13062EDC07986E8CB487F1 /* Pods_MyMoneeProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79ED7E332BD97FD64F726A31 /* Pods_MyMoneeProject.framework */; };
 		FA2D28E42650CC66009B02B2 /* ConfirmationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D28E32650CC66009B02B2 /* ConfirmationStatus.swift */; };
-		FA3B23ED26561D8A00D4D868 /* MoneyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B23EC26561D8A00D4D868 /* MoneyService.swift */; };
+		FA3B23ED26561D8A00D4D868 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B23EC26561D8A00D4D868 /* Transaction.swift */; };
 		FA3B23F12656476B00D4D868 /* TransactionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B23F02656476B00D4D868 /* TransactionResponse.swift */; };
 		FA3B23F4265650A700D4D868 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B23F3265650A700D4D868 /* UserResponse.swift */; };
 		FA3B23FA2656565D00D4D868 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B23F92656565D00D4D868 /* UserService.swift */; };
 		FA3B23FE2656AD4300D4D868 /* WalletResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B23FD2656AD4300D4D868 /* WalletResponse.swift */; };
 		FA3B24022656ADF800D4D868 /* WalletService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B24012656ADF800D4D868 /* WalletService.swift */; };
+		FA3B2406265743F200D4D868 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B2405265743F200D4D868 /* Config.swift */; };
 		FA547634264FAB6600B5E40B /* CategorySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA547633264FAB6600B5E40B /* CategorySelection.swift */; };
 		FA547637264FBAA500B5E40B /* ButtonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA547636264FBAA500B5E40B /* ButtonConfig.swift */; };
 		FA54763B264FBE2500B5E40B /* UsageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA547639264FBE2500B5E40B /* UsageDetailViewController.swift */; };
@@ -79,13 +81,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		673C79FB9BB1135894B19A3E /* Pods-MyMoneeProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMoneeProject.release.xcconfig"; path = "Target Support Files/Pods-MyMoneeProject/Pods-MyMoneeProject.release.xcconfig"; sourceTree = "<group>"; };
+		79ED7E332BD97FD64F726A31 /* Pods_MyMoneeProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMoneeProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D86152DB3C12103B1A85B98F /* Pods-MyMoneeProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMoneeProject.debug.xcconfig"; path = "Target Support Files/Pods-MyMoneeProject/Pods-MyMoneeProject.debug.xcconfig"; sourceTree = "<group>"; };
 		FA2D28E32650CC66009B02B2 /* ConfirmationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationStatus.swift; sourceTree = "<group>"; };
-		FA3B23EC26561D8A00D4D868 /* MoneyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyService.swift; sourceTree = "<group>"; };
+		FA3B23EC26561D8A00D4D868 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		FA3B23F02656476B00D4D868 /* TransactionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResponse.swift; sourceTree = "<group>"; };
 		FA3B23F3265650A700D4D868 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		FA3B23F92656565D00D4D868 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		FA3B23FD2656AD4300D4D868 /* WalletResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletResponse.swift; sourceTree = "<group>"; };
 		FA3B24012656ADF800D4D868 /* WalletService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletService.swift; sourceTree = "<group>"; };
+		FA3B2405265743F200D4D868 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		FA547633264FAB6600B5E40B /* CategorySelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelection.swift; sourceTree = "<group>"; };
 		FA547636264FBAA500B5E40B /* ButtonConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonConfig.swift; sourceTree = "<group>"; };
 		FA547639264FBE2500B5E40B /* UsageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageDetailViewController.swift; sourceTree = "<group>"; };
@@ -157,16 +163,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D13062EDC07986E8CB487F1 /* Pods_MyMoneeProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B6CABAA53C8FF3C56153BF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				79ED7E332BD97FD64F726A31 /* Pods_MyMoneeProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4165CA5613A1BEFB3372F6FB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D86152DB3C12103B1A85B98F /* Pods-MyMoneeProject.debug.xcconfig */,
+				673C79FB9BB1135894B19A3E /* Pods-MyMoneeProject.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FA3B23EB26561D6F00D4D868 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				FA3B23EC26561D8A00D4D868 /* MoneyService.swift */,
+				FA3B23EC26561D8A00D4D868 /* Transaction.swift */,
 				FA3B23F92656565D00D4D868 /* UserService.swift */,
 				FA3B24012656ADF800D4D868 /* WalletService.swift */,
 			);
@@ -197,6 +222,8 @@
 			children = (
 				FAF609A7264CE1DA004912DC /* MyMoneeProject */,
 				FAF609A6264CE1DA004912DC /* Products */,
+				4165CA5613A1BEFB3372F6FB /* Pods */,
+				0B6CABAA53C8FF3C56153BF4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -331,6 +358,7 @@
 				FAF60A2D264EB223004912DC /* ConvertVariable.swift */,
 				FA547636264FBAA500B5E40B /* ButtonConfig.swift */,
 				FA672ABE265012A6004F42E6 /* DateTime.swift */,
+				FA3B2405265743F200D4D868 /* Config.swift */,
 			);
 			path = Method;
 			sourceTree = "<group>";
@@ -351,9 +379,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAF609B9264CE1DB004912DC /* Build configuration list for PBXNativeTarget "MyMoneeProject" */;
 			buildPhases = (
+				59EF78DD4408AAFBF3357E23 /* [CP] Check Pods Manifest.lock */,
 				FAF609A1264CE1DA004912DC /* Sources */,
 				FAF609A2264CE1DA004912DC /* Frameworks */,
 				FAF609A3264CE1DA004912DC /* Resources */,
+				0CDAE5D95F183601283C7AEB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -442,6 +472,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0CDAE5D95F183601283C7AEB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyMoneeProject/Pods-MyMoneeProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyMoneeProject/Pods-MyMoneeProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyMoneeProject/Pods-MyMoneeProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59EF78DD4408AAFBF3357E23 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyMoneeProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FAF609A1264CE1DA004912DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -455,7 +527,7 @@
 				FA3B23F4265650A700D4D868 /* UserResponse.swift in Sources */,
 				FAF60A1E264E47A6004912DC /* AddDreamViewController.swift in Sources */,
 				FA3B23FE2656AD4300D4D868 /* WalletResponse.swift in Sources */,
-				FA3B23ED26561D8A00D4D868 /* MoneyService.swift in Sources */,
+				FA3B23ED26561D8A00D4D868 /* Transaction.swift in Sources */,
 				FAF60A16264D655A004912DC /* DreamTableViewCell.swift in Sources */,
 				FA547637264FBAA500B5E40B /* ButtonConfig.swift in Sources */,
 				FAF609F9264CF075004912DC /* HomeTableViewCell.swift in Sources */,
@@ -468,6 +540,7 @@
 				FAF60A2E264EB223004912DC /* ConvertVariable.swift in Sources */,
 				FAF609A9264CE1DA004912DC /* AppDelegate.swift in Sources */,
 				FAF60A09264D1040004912DC /* AddUsageViewController.swift in Sources */,
+				FA3B2406265743F200D4D868 /* Config.swift in Sources */,
 				FA547634264FAB6600B5E40B /* CategorySelection.swift in Sources */,
 				FA547641264FC1C200B5E40B /* Colors.swift in Sources */,
 				FA7656A5264FA3BE00CD6C85 /* CategoryCollectionViewCell.swift in Sources */,
@@ -615,6 +688,7 @@
 		};
 		FAF609BA264CE1DB004912DC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D86152DB3C12103B1A85B98F /* Pods-MyMoneeProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -634,6 +708,7 @@
 		};
 		FAF609BB264CE1DB004912DC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 673C79FB9BB1135894B19A3E /* Pods-MyMoneeProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

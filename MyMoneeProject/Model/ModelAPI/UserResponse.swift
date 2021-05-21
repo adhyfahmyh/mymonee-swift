@@ -8,10 +8,10 @@
 import Foundation
 
 struct UserResponse: Codable {
-    var id: Int?
+    var id: String?
     var name: String?
     var balance: Decimal?
     var displayPicture: String?
 }
 
-var usersApi: [UserResponse] = []
+var myUser: [UserResponse] = []

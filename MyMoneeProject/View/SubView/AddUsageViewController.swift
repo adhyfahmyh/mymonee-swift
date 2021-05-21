@@ -18,9 +18,12 @@ class AddUsageViewController: UIViewController {
     
     var usageType:Int? = nil
     var delegate: updateDataHome?
-    private var moneyIn: Decimal = wallets[0].totalMoneyIn ?? 0
-    private var moneyOut: Decimal = wallets[0].totalMoneyOut ?? 0
-    var convert = String()
+//    private var moneyIn: Decimal = wallets[0].totalMoneyIn ?? 0
+//    private var moneyOut: Decimal = wallets[0].totalMoneyOut ?? 0
+    
+    
+    private var moneyIn: Decimal = myWallet.first?.totalMoneyIn ?? 0
+    private var moneyOut: Decimal = myWallet.first?.totalMoneyOut ?? 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,21 +62,27 @@ class AddUsageViewController: UIViewController {
         
         let usageId: String = UUID().uuidString
         let usageTitle = fieldTitle.text ?? ""
-//        let amount = convert.setStringToDecimal(amountValue: fieldAmount.text ?? "")
         let amount = fieldAmount.text?.setStringToDecimal ?? 0
         
         var statusType: String?
+        var totalMoney: Decimal?
+        var balance: Decimal = myUser.first?.balance ?? 0
         if usageType == 0 {
             statusType = "pemasukan"
-            wallets[0].totalMoneyIn! = moneyIn + amount
-            users[0].balance! += amount
+            totalMoney = moneyIn + amount
+            balance += amount
+            WalletService().editWallet(editModel: WalletResponse(id: myWallet.first?.id, userId: myWallet.first?.userId, totalMoneyIn: totalMoney, totalMoneyOut: moneyOut), id: "1")
         } else {
             statusType = "pengeluaran"
-            wallets[0].totalMoneyOut! = moneyOut + amount
-            users[0].balance! -= amount
+            totalMoney = moneyOut + amount
+            balance -= amount
+            WalletService().editWallet(editModel: WalletResponse(id: myWallet[0].id, userId: myWallet[0].userId, totalMoneyIn: moneyIn, totalMoneyOut: totalMoney), id: "1")
         }
+        createSpinnerView()
         
         MoneyService().addTransaction(uploadDataModel: TransactionResponse(id: usageId, date: Date().dateTime, usageTitle: usageTitle, usageAmount: amount, status: statusType))
+        
+        UserService().editUser(editModel: UserResponse(id: myUser.first?.id, name: myUser.first?.name, balance: balance, displayPicture: myUser.first?.displayPicture), id: myWallet.first?.userId ?? "")
         
         self.dismiss(animated: true, completion: nil)
 //        {

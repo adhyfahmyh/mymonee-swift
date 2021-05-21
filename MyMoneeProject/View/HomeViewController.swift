@@ -15,7 +15,6 @@ class HomeViewController: UIViewController{
     @IBOutlet weak var notFoundView: NotFoundView!
     
 //    var userAPI: [User] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +22,6 @@ class HomeViewController: UIViewController{
         
         self.dynamicGreetings()
         self.setLabelHome()
-        self.loadData()
         self.loadData()
         
         usageHistoryTable.delegate = self
@@ -42,6 +40,14 @@ class HomeViewController: UIViewController{
         usageHistoryTable.reloadData()
         self.loadData()
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        self.dynamicGreetings()
+//        self.setLabelHome()
+//        usageHistoryTable.reloadData()
+//        self.loadData()
+//    }
     
     @IBAction func addUsage(_ sender: Any) {
         let addUsageViewController = AddUsageViewController(nibName: "AddUsageViewController", bundle: nil)
@@ -182,26 +188,59 @@ extension HomeViewController: updateDataHome {
     }
     
     func setLabelHome() {
-        userName.text = users.first?.name
-//        userBalance.text = "Rp. \(convert.setAmountString(amountValue: users[0].balance ?? 0))"
-//        moneyInLbl.text = "Rp. \(convert.setAmountString(amountValue: wallets[0].totalMoneyIn ?? 0))"
-//        moneyOutLbl.text = "Rp. \(convert.setAmountString(amountValue: wallets[0].totalMoneyOut ?? 0))"
-        userBalance.text = "Rp. \(users.first?.balance?.setAmountString ?? "")"
-        moneyInLbl.text = "Rp. \(wallets.first?.totalMoneyIn?.setAmountString ?? "")"
-        moneyOutLbl.text = "Rp. \(wallets.first?.totalMoneyOut?.setAmountString ?? "")"
-//        userName.text = userAPI.first?.name
+//        userName.text = users.first?.name
+//        userBalance.text = "Rp. \(users.first?.balance?.setAmountString ?? "")"
+//        moneyInLbl.text = "Rp. \(wallets.first?.totalMoneyIn?.setAmountString ?? "")"
+//        moneyOutLbl.text = "Rp. \(wallets.first?.totalMoneyOut?.setAmountString ?? "")"
+        
     }
     
     func loadData() {
+        UserService().editUser(editModel: UserResponse(id: myUser.first?.id, name: myUser.first?.name, balance: ((myWallet.first?.totalMoneyIn ?? 0)-(myWallet.first?.totalMoneyOut ?? 0)), displayPicture: myUser.first?.displayPicture), id: "1")
+        
+        self.createSpinnerView()
+        
         MoneyService().loadTransactions{ (list) in
             DispatchQueue.main.async {
+//                print(list)
                 transaction = list
                 self.usageHistoryTable.reloadData()
             }
         }
+        
         WalletService().loadWallet(completion: { (list) in
-            myWallet = list
+            DispatchQueue.main.async {
+                myWallet = list
+                self.moneyInLbl.text = "Rp. \(myWallet.first?.totalMoneyIn?.setAmountString ?? "")"
+                self.moneyOutLbl.text = "Rp. \(myWallet.first?.totalMoneyOut?.setAmountString ?? "")"
+            }
+        })
+        
+        UserService().loadUser(completion: { (list) in
+            DispatchQueue.main.async {
+                myUser = list
+                self.userName.text = myUser.first?.name
+                self.userBalance.text = "Rp. \(((myWallet.first?.totalMoneyIn ?? 0)-(myWallet.first?.totalMoneyOut ?? 0)).setAmountString )"
+            }
         })
     }
     
+    
+}
+
+extension UIViewController {
+    func createSpinnerView() {
+        let child = SpinnerViewController()
+
+        addChild(child)
+        child.view.frame = view.frame
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            child.willMove(toParent: nil)
+            child.view.removeFromSuperview()
+            child.removeFromParent()
+        }
+    }
 }

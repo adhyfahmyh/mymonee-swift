@@ -25,12 +25,14 @@ class UsageDetailViewController: UIViewController {
         super.viewDidLoad()
         componentConfig()
         receiveData()
+        self.loadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         componentConfig()
         receiveData()
+        self.loadData()
     }
 
     @IBAction func editUsage(_ sender: UIButton) {
@@ -110,3 +112,14 @@ extension UsageDetailViewController: updateDataHome {
     }
 }
 
+
+extension UsageDetailViewController {
+    func loadData() {
+        MoneyService().loadTransactions{ (list) in
+            DispatchQueue.main.async {
+                transaction = list
+                self.receiveData()
+            }
+        }
+    }
+}

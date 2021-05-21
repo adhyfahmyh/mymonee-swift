@@ -6,12 +6,12 @@
 //
 
 import Foundation
+
 struct WalletResponse: Codable {
-    var id: Int? = nil
-    var userId: Int? = nil
-    var totalMoneyIn: Decimal? = 0
-    var totalMoneyOut: Decimal? = 0
-    
+    var id: String?
+    var userId: String?
+    var totalMoneyIn: Decimal?
+    var totalMoneyOut: Decimal?    
 }
 
 var myWallet: [WalletResponse] = []
