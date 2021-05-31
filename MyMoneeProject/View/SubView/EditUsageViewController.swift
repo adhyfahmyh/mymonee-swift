@@ -133,17 +133,18 @@ extension EditUsageViewController {
         var statusType: String?
         
 //        var balanceEdit = myUser.first?.balance
-        
+//        print(transaction[passIndex!].status ?? "=======KOSONG=======")
         if transaction[passIndex!].status == "pemasukan" {
             statusType = "pemasukan"
-            totalMoneyIn = (moneyIn) - (transaction[passIndex!].usageAmount ?? 0)
+            totalMoneyIn = (myWallet.first?.totalMoneyIn ?? 0) - (transaction[passIndex!].usageAmount ?? 0)
 //            totalMoneyIn += usageAmount
 //            WalletService().editWallet(editModel: WalletResponse(id: myWallet.first?.id, userId: myWallet.first?.userId, totalMoneyIn: totalMoneyIn, totalMoneyOut: totalMoneyOut), id: "1")
             WalletService().editWallet(editModel: WalletResponse(id: myWallet.first?.id, userId: myWallet.first?.userId, totalMoneyIn: (totalMoneyIn + usageAmount), totalMoneyOut: totalMoneyOut), id: "1")
+//            print(myWallet.first ?? [])
 //            balanceEdit = ((totalMoneyIn) - (totalMoneyOut))
         } else {
             statusType = "pengeluaran"
-            totalMoneyOut = (moneyOut) - (transaction[passIndex!].usageAmount ?? 0)
+            totalMoneyOut = (myWallet.first?.totalMoneyOut ?? 0) - (transaction[passIndex!].usageAmount ?? 0)
 //            totalMoneyOut += usageAmount
 //            WalletService().editWallet(editModel: WalletResponse(id: myWallet[0].id, userId: myWallet[0].userId, totalMoneyIn: totalMoneyIn, totalMoneyOut: totalMoneyOut), id: "1")
             WalletService().editWallet(editModel: WalletResponse(id: myWallet[0].id, userId: myWallet[0].userId, totalMoneyIn: totalMoneyIn, totalMoneyOut: (totalMoneyOut + usageAmount)), id: "1")
@@ -151,7 +152,6 @@ extension EditUsageViewController {
         }
         
         MoneyService().editTransaction(editModel: TransactionResponse(id: transaction[passIndex ?? 0].id ?? "", date: Date().dateTime, usageTitle: fieldTitle.text, usageAmount: usageAmount, status: statusType), id: transaction[passIndex ?? 0].id ?? "")
-        
 //        let balanceEdit: Decimal = ((totalMoneyIn) - (totalMoneyOut))
 //        UserService().editUser(editModel: UserResponse(id: myUser.first?.id, name: myUser.first?.name, balance: balanceEdit, displayPicture: myUser.first?.displayPicture), id: "1")
         

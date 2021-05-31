@@ -21,8 +21,8 @@ class HomeViewController: UIViewController{
         notFoundView.isHidden = true
         
         self.dynamicGreetings()
-        self.setLabelHome()
         self.loadData()
+        self.setLabelHome()
         
         usageHistoryTable.delegate = self
         usageHistoryTable.dataSource = self
@@ -35,19 +35,17 @@ class HomeViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.dynamicGreetings()
+        self.createSpinnerView()
         self.setLabelHome()
-        usageHistoryTable.reloadData()
-        self.loadData()
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        self.dynamicGreetings()
-//        self.setLabelHome()
-//        usageHistoryTable.reloadData()
-//        self.loadData()
-//    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        usageHistoryTable.reloadData()
+        self.dynamicGreetings()
+        self.loadData()
+        self.setLabelHome()
+    }
     
     @IBAction func addUsage(_ sender: Any) {
         let addUsageViewController = AddUsageViewController(nibName: "AddUsageViewController", bundle: nil)
@@ -193,18 +191,23 @@ extension HomeViewController: updateDataHome {
 //        moneyInLbl.text = "Rp. \(wallets.first?.totalMoneyIn?.setAmountString ?? "")"
 //        moneyOutLbl.text = "Rp. \(wallets.first?.totalMoneyOut?.setAmountString ?? "")"
         
+        self.userName.text = myUser.first?.name
+        self.userBalance.text = "Rp. \( ((myWallet.first?.totalMoneyIn ?? 0)-(myWallet.first?.totalMoneyOut ?? 0)).setAmountString )"
+        self.moneyInLbl.text = "Rp. \(myWallet.first?.totalMoneyIn?.setAmountString ?? "")"
+        self.moneyOutLbl.text = "Rp. \(myWallet.first?.totalMoneyOut?.setAmountString ?? "")"
+        
     }
     
     func loadData() {
         UserService().editUser(editModel: UserResponse(id: myUser.first?.id, name: myUser.first?.name, balance: ((myWallet.first?.totalMoneyIn ?? 0)-(myWallet.first?.totalMoneyOut ?? 0)), displayPicture: myUser.first?.displayPicture), id: "1")
         
-        self.createSpinnerView()
         
         MoneyService().loadTransactions{ (list) in
             DispatchQueue.main.async {
 //                print(list)
                 transaction = list
                 self.usageHistoryTable.reloadData()
+                self.setLabelHome()
             }
         }
         
@@ -241,6 +244,17 @@ extension UIViewController {
             child.willMove(toParent: nil)
             child.view.removeFromSuperview()
             child.removeFromParent()
+        }
+    }
+    
+    func showToast(message : String, seconds: Double){
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alert.view.backgroundColor = .black
+        alert.view.alpha = 0.5
+        alert.view.layer.cornerRadius = 15
+        self.present(alert, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + seconds) {
+            alert.dismiss(animated: true)
         }
     }
 }
