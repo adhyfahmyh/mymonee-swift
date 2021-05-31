@@ -26,9 +26,9 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         
         editSaveBtn.setTitle("Edit", for: .normal)
-//        profilePhoto.image = UIImage(named: users[0].displayPicture ?? "")
-        
-        profilePhoto.kf.setImage(with: URL(string: "https://www.pngitem.com/pimgs/m/161-1613980_arthur-morgan-png-download-red-dead-redemption-2.png"))
+        profilePhoto.image = UIImage(named: users[0].displayPicture ?? "")
+//
+//        profilePhoto.kf.setImage(with: URL(string: "https://www.pngitem.com/pimgs/m/161-1613980_arthur-morgan-png-download-red-dead-redemption-2.png"))
         editPhoto.isHidden = true
         editName.isHidden = true
         profileName.text = users[0].name
