@@ -18,7 +18,7 @@ First, simply clone this repository using basic git command
 	- Create a directory in your local storage
 	- Type `git clone`
 	```
-	git clone *"This repository url"*
+	git clone "This repository url"
 	```
 2. Install dependency using [**Cocoapods**](https://cocoapods.org/), type `pod install`
 3. Open **MyMoneeProject.xcworkspace** using XCODE
