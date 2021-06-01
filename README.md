@@ -19,6 +19,19 @@ First, simply clone this repository using basic git command
 	```
 	git clone https://github.com/adhyfahmyh/mymonee-swift.git
 	```
-2. Install dependency using cocoapods, type `pod install`
+2. Install dependency using **Cocoapods**, type `pod install`
 3. Open **MyMoneeProject.xcworkspace** using XCODE
 4. RUN
+
+## Usage
+
+- Cocoapods <br>
+CocoaPods is a dependency manager for Swift and Objective-C Cocoa projects
+- View <br>
+In this group folder there is ViewController of each features
+- Network <br>
+This group folder contain a function to the API
+- Model <br>
+Contain objects used in this application, and the response API of each objects
+- Cells <br>
+This group folder contain cell of TableView used on each features
