@@ -14,11 +14,11 @@ These are some of the User Interface of MyMonee Application
 ## How to Install
 1. Clone this repository
 First, simply clone this repository using basic git command
-- 1. Create a directory in your local storage
-- 2. Type `git clone`
-```
-git clone https://github.com/adhyfahmyh/mymonee-swift.git
-```
+	1. Create a directory in your local storage
+	2. Type `git clone`
+	```
+	git clone https://github.com/adhyfahmyh/mymonee-swift.git
+	```
 2. Install dependency using cocoapods, type `pod install`
 3. Open **MyMoneeProject.xcworkspace** using XCODE
 4. RUN
