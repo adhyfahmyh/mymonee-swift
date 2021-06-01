@@ -12,8 +12,7 @@ These are some of the User Interface of MyMonee Application
 [<img src="https://github.com/adhyfahmyh/mymonee-swift/blob/main/Assets/Screen%20Shot%202021-06-01%20at%2007.09.10.png" width="250"/>](profile)
 
 ## How to Install
-1. Clone this repository
-
+1. Clone this repository <br />
 First, simply clone this repository using basic git command
 	- Create a directory in your local storage
 	- Type `git clone`
